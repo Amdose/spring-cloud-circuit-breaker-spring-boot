@@ -72,6 +72,7 @@ Create a new Postman collection with the following request:
 3. After 30 seconds, the Third Party Component should recover
 
 As show below
+
 ![image](https://github.com/user-attachments/assets/1e23bfe9-4533-4f03-849f-310e4d4e2325)
 ![image](https://github.com/user-attachments/assets/10703fd9-812a-4284-a54c-1f5547dce2e8)
 ![image](https://github.com/user-attachments/assets/c2553040-a52d-42fd-875c-7addba23481a)
