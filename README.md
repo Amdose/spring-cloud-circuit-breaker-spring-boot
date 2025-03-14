@@ -22,7 +22,7 @@ This project demonstrates resilience patterns in a distributed system with two c
 
 ## Expected Behavior
 
-In our demonstration, the first 5 API calls execute successfully, with the cloud service seamlessly passing through third-party responses. On the 6th request, the third-party service fails but our middleware still makes the call and returns the error from downstream. The true resilience shines around the 9th request, when our failure rate crosses the 50% threshold - at this point, Resilience4j's circuit breaker trips open and stops calling the third-party service entirely. Instead, requests are immediately routed to our fallback method, providing a graceful degraded experience until the system recovers.
+In our demonstration, the first 5 API calls execute successfully, with the cloud service seamlessly passing through third-party responses. On the 6th request, the third-party service fails but our middleware still makes the call and returns the error from downstream. The true resilience shines around the 9th request, when our failure rate crosses the 50% threshold - at this point, Resilience4j's circuit breaker trips open and stops calling the third-party service entirely. Instead, requests are immediately routed to our fallback method, providing a graceful degraded experience until the system recovers
 
 ## Circuit Breaker Configuration
 
@@ -51,11 +51,10 @@ You can access:
 - http://localhost:8082/actuator/health for overall health status
 - http://localhost:8082/actuator/circuitbreakers for detailed metrics
 - http://localhost:8082/actuator/health/circuitbreakers for circuit-specific health details
+![image](https://github.com/user-attachments/assets/81cf0d7a-9163-4542-89e7-80c5b9101e6d)
+
 
 ## Testing with Postman
-
-### Postman Collection
-
 Create a new Postman collection with the following request:
 
 1. **Cloud Data Request**
@@ -71,3 +70,8 @@ Create a new Postman collection with the following request:
     - 9th+ requests: Circuit breaker trips, fallback responses provided
 2. Wait 10 seconds and try again - the circuit enters half-open state
 3. After 30 seconds, the Third Party Component should recover
+
+As show below
+![image](https://github.com/user-attachments/assets/1e23bfe9-4533-4f03-849f-310e4d4e2325)
+![image](https://github.com/user-attachments/assets/10703fd9-812a-4284-a54c-1f5547dce2e8)
+![image](https://github.com/user-attachments/assets/c2553040-a52d-42fd-875c-7addba23481a)
