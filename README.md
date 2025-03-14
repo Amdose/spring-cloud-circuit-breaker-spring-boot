@@ -1,4 +1,4 @@
-# Resilience Patterns Demo
+# Resilience Patterns Example
 
 This project demonstrates resilience patterns in a distributed system with two components:
 
